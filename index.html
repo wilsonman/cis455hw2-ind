@@ -1,0 +1,74 @@
+<html>
+
+<head>
+	<title>Parcel Sandbox</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<header> <!--This represents introductory content, typically a group of introductory or navigational aids. It may contain some heading elements but also a logo, a search form, an author name, and other elements.-->
+		<hgroup class="heading"> <!-- groups the <h1> and the <p> elements below-->
+			<h1 id="title">Projectile App</h1>
+			<p id="description">This application calculates the trajectory of a projectile.</p>
+		</hgroup>
+	</header>
+
+	<main>
+		<h2>Instructions</h2>
+			<p>Enter the projectile's angle (0-90&deg) <!--&deg; = degree symbol--> and velocity (0-9,999 m/s) and press GO! Here are some examples of valid inputs:</p>
+			<div class="container"> <!-- contains the table so we can center it onto the page-->
+				<table>
+					<thead> <!-- easier to identify header from rest of the table-->
+						<tr>
+							<th scope="col">Angle</th>
+							<th scope="col">Velocity</th>
+						</tr>
+					</thead>
+					<tbody> <!-- the main set of rows containing the sample angles and velocity in the table of valid inputs -->
+						<tr scope="row"> <!-- this row goes underneath the row in thead -->
+							<td>10</td>
+							<td>100</td>
+						</tr>
+
+						<tr scope="row"> <!-- second row-->
+							<td>45</td>
+							<td>50</td>
+						</tr>
+
+						<tr scope="row">
+							<td>90</td>
+							<td>500</td>
+						</tr>
+
+						<tr scope="row">
+							<td>77</td>
+							<td>1000</td>
+						</tr>
+					</tbody>
+				</table>
+				<br />
+			</div>
+		<div class="missile-info">
+			<form action="#" method="get" class="projectile-model">
+				<div class="projectile-model">
+					<label for="angle">Angle: </label> <!-- the value ("qouted text") in the label's form attribute must match that of the corresponding input's id attribute -->
+					<input type="number" name="angle" id="angle" placeholder="in degrees" min="0" max="90" required> <!-- number only allows numbers to be entered into the text box; arrows allow us to increase or decrese the number the required attribute says don't allow this form to go through if this value is blank. -->
+				</div>
+				<div class="projectile-model">
+					<label for="velocity">Velocity: </label>
+					<input type="number" name="velocity" id="velocity" min="0" max="9999" placeholder="in meters per second" required>
+				</div>
+				<div class="projectile-model">
+					<input id="button" type="reset">
+					<input id="button" type="submit" value="GO!"> <!-- leaving the value attribute blank will label the button as a Submit button instead of a GO! button -->
+				</div>
+			</form>
+		</div>
+	</main>
+
+	<footer><em>Cross-platform mobile app demo.</em></footer>
+
+</body>
+
+</html>
